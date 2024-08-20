@@ -1,6 +1,6 @@
 const config = {
   backend: {
-    name: "test-repo",
+    name: "git-gateway",
     branch: "main", // Branch to update (optional; defaults to main)
   },
   local_backend: true,
