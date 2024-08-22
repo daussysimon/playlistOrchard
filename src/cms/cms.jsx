@@ -3,7 +3,8 @@ import React, { useEffect } from "react";
 import config from "./config";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBicycle } from "@fortawesome/free-solid-svg-icons";
+import { faNewspaper } from "@fortawesome/free-solid-svg-icons";
+import { FileControl } from "./widget/galleryPhoto/galleryPhoto";
 
 import "@staticcms/core/dist/main.css";
 
@@ -12,10 +13,12 @@ const CMSView = () => {
     if (typeof window !== `undefined`) {
       CMS.init({ config });
 
+      CMS.registerWidget("image-gallery", FileControl);
+
       CMS.registerPreviewStyle("/styles/content.module.css");
 
-      CMS.registerIcon("bikes", () => (
-        <FontAwesomeIcon icon={faBicycle} size="lg" />
+      CMS.registerIcon("news", () => (
+        <FontAwesomeIcon icon={faNewspaper} size="lg" />
       ));
 
       CMS.registerAdditionalLink({
@@ -39,6 +42,9 @@ const CMSView = () => {
         }
         .CMS_Editor_content-wrapper {
           margin: 60px;
+        }
+        .CMS_WidgetObject_summary {
+          font-size: 0.9rem;
         }
 
         a:active,
