@@ -4,8 +4,8 @@ const config = {
     branch: "main", // Branch to update (optional; defaults to main)
   },
   local_backend: true,
-  media_folder: "/public/files",
-  public_folder: "/files",
+  media_folder: "/static/img",
+  public_folder: "/img",
   slug: {
     encoding: "ascii",
     clean_accents: true,
