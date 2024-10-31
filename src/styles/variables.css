@@ -1,0 +1,21 @@
+:root {
+  --main-color: #4f3f80;
+  --main-font: "Quiksand sans", sans-serif;
+  --second-font: "Montserrat", sans-serif;
+}
+
+* {
+  font-family: var(--main-font);
+}
+
+p,
+h2,
+li {
+  color: #54595f;
+}
+
+html,
+body {
+  height: 100%;
+  overflow-y: visible;
+}

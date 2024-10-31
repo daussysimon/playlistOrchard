@@ -1,0 +1,4 @@
+---
+templateKey: comments
+comments: "{{content}}"
+---

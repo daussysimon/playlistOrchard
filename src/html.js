@@ -2,23 +2,23 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 
 export default function HTML(props) {
-  const script = () => {
-    const isBrowser = typeof window !== "undefined";
-    if (isBrowser) {
-      if (window?.netlifyIdentity) {
-        (" ");
-      }
-      {
-        window?.netlifyIdentity.on("init", (user) => {
-          if (!user) {
-            window?.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
-        });
-      }
-    }
-  };
+  // const script = () => {
+  //   const isBrowser = typeof window !== "undefined";
+  //   if (isBrowser) {
+  //     if (window?.netlifyIdentity) {
+  //       (" ");
+  //     }
+  //     {
+  //       window?.netlifyIdentity.on("init", (user) => {
+  //         if (!user) {
+  //           window?.netlifyIdentity.on("login", () => {
+  //             document.location.href = "/admin/";
+  //           });
+  //         }
+  //       });
+  //     }
+  //   }
+  // };
   return (
     <html {...props.htmlAttributes}>
       <head>
@@ -39,7 +39,6 @@ export default function HTML(props) {
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
         {props.postBodyComponents}
-        <script>{script()}</script>
       </body>
     </html>
   );

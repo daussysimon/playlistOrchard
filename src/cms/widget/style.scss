@@ -48,4 +48,21 @@
       }
     }
   }
+  &-link {
+    display: flex;
+    fieldset {
+      width: 50%;
+    }
+    fieldset:nth-child(2) {
+      label {
+        text-align: center;
+        margin: auto !important;
+        display: block;
+      }
+      input {
+        margin: auto;
+        display: block;
+      }
+    }
+  }
 }

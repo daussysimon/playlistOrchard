@@ -1,4 +1,3 @@
-const _ = require("lodash");
 const path = require("path");
 const { createFilePath } = require("gatsby-source-filesystem");
 
@@ -60,29 +59,37 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const posts = result.data.allMarkdownRemark.edges;
 
-  console.log(posts);
-
   // Create blog posts pages
   // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
   // `context` is available in the template as a prop and as a variable in GraphQL
 
-  // if (posts.length > 0) {
-  //   posts.forEach((post, index) => {
-  //     const previousPostId = index === 0 ? null : posts[index - 1].id;
-  //     const nextPostId =
-  //       index === posts.length - 1 ? null : posts[index + 1].id;
+  if (posts.length > 0) {
+    posts
+      .filter(
+        (post) =>
+          ![
+            "ui",
+            "comments",
+            "categories",
+            "products",
+            "categories",
+            "products",
+          ].includes(post.node.frontmatter.templateKey)
+      )
+      .forEach((post, index) => {
+        console.log(post);
 
-  //     createPage({
-  //       path: post.node.fields.slug,
-  //       component: path.resolve(
-  //         `src/templates/${String(post?.node.frontmatter.templateKey)}.js`
-  //       ),
-  //       context: {
-  //         id: post.node.id,
-  //       },
-  //     });
-  //   });
-  // }
+        createPage({
+          path: post.node.fields.slug,
+          component: path.resolve(
+            `src/templates/${String(post?.node.frontmatter.templateKey)}.jsx`
+          ),
+          context: {
+            id: post.node.id,
+          },
+        });
+      });
+  }
 };
 
 /**

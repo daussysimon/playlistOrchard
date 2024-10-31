@@ -4,7 +4,7 @@ const config = {
     branch: "main", // Branch to update (optional; defaults to main)
   },
   local_backend: true,
-  media_folder: "/static/img",
+  media_folder: "static/img",
   public_folder: "/img",
   slug: {
     encoding: "ascii",
@@ -23,7 +23,6 @@ const config = {
     {
       name: "page",
       label: "Pages",
-
       delete: false,
       editor: {
         preview: true,
@@ -31,7 +30,7 @@ const config = {
       },
       files: [
         {
-          name: "home",
+          name: "homePage",
           label: "Home",
           file: "/content/index.md",
           description: "Home page informations",
@@ -59,7 +58,7 @@ const config = {
                   widget: "text",
                 },
                 {
-                  name: "backgoundImage",
+                  name: "backgroundImage",
                   label: "Background Image",
                   widget: "image",
                 },
@@ -192,21 +191,25 @@ const config = {
             {
               name: "aboutUs",
               label: "About us",
-              widget: "text",
+              widget: "object",
+              fields: [
+                { name: "text", label: "Description", widget: "text" },
+                { name: "video", label: "Video", widget: "video" },
+              ],
             },
           ],
         },
         {
           name: "shop",
           label: "The shop",
-          file: "/content/shop/index.md",
+          file: "/content/theShop/index.md",
           description: "Shop page informations",
           fields: [
             {
               label: "Template Key",
               name: "templateKey",
               widget: "hidden",
-              default: "shop",
+              default: "theShop",
             },
             {
               name: "header",
@@ -220,7 +223,7 @@ const config = {
                   widget: "string",
                 },
                 {
-                  name: "backgoundImage",
+                  name: "backgroundImage",
                   label: "Background Image",
                   widget: "image",
                 },
@@ -245,15 +248,16 @@ const config = {
                 {
                   name: "phoneNumber",
                   label: "Phone number",
-                  widget: "number",
+                  widget: "string",
                 },
                 {
                   name: "appointment",
                   label: "Appointment button",
                   widget: "object",
+                  require: false,
                   fields: [
                     { name: "label", label: "Label", widget: "string" },
-                    { name: "ling", label: "Link", widget: "string" },
+                    { name: "link", label: "Link", widget: "string" },
                     { name: "visible", label: "Visible", widget: "boolean" },
                   ],
                 },
@@ -312,7 +316,7 @@ const config = {
         {
           name: "guestHouse",
           label: "The guest house",
-          file: "/content/guestHouse/index.md",
+          file: "/content/guesthouse/index.md",
           description: "Guest house page informations",
           fields: [
             {
@@ -337,12 +341,47 @@ const config = {
                   label: "Background Image",
                   widget: "image",
                 },
+                {
+                  name: "button",
+                  label: "Button",
+                  widget: "object",
+                  summary: "{{fields.label}}: {{fields.link}}",
+                  fields: [
+                    {
+                      name: "label",
+                      label: "Label",
+                      widget: "string",
+                    },
+                    {
+                      name: "link",
+                      label: "Link",
+                      widget: "string",
+                    },
+                  ],
+                },
               ],
             },
             {
               name: "description",
               label: "Description",
               widget: "text",
+            },
+            {
+              name: "bookingButton",
+              label: "Booking Button",
+              widget: "object",
+              fields: [
+                {
+                  name: "label",
+                  label: "Label",
+                  widget: "string",
+                },
+                {
+                  name: "link",
+                  label: "Link",
+                  widget: "string",
+                },
+              ],
             },
             {
               name: "amenties",
@@ -375,9 +414,95 @@ const config = {
             },
           ],
         },
+        {
+          name: "contact",
+          label: "Contact informations",
+          file: "/content/contact/index.md",
+          description: "Contact page informations",
+          fields: [
+            {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "contact",
+            },
+
+            {
+              label: "Page Title",
+              name: "title",
+              widget: "string",
+            },
+            {
+              label: "Descirption",
+              name: "description",
+              widget: "text",
+            },
+            {
+              label: "Phone number",
+              name: "phoneNumber",
+              widget: "string",
+            },
+            {
+              label: "Email Adress",
+              name: "emailAdress",
+              widget: "string",
+            },
+            {
+              label: "Adresses",
+              name: "adresses",
+              widget: "list",
+              fields: [
+                {
+                  label: "Adress",
+                  name: "adress",
+                  widget: "string",
+                },
+              ],
+            },
+            {
+              label: "Shop localisation",
+              name: "shopLocalisation",
+              widget: "map",
+            },
+          ],
+        },
       ],
     },
+    {
+      name: "settings",
+      label: "Settings",
+      delete: false,
+      icon: "setting",
+      files: [
+        {
+          name: "ui",
+          label: "Settings",
+          file: "/content/settings/index.md",
+          description: "website settings",
+          fields: [
+            {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "ui",
+            },
+            {
+              label: "Logo",
+              name: "logo",
+              widget: "image",
+            },
 
+            {
+              label: "Menu",
+              name: "menu",
+              widget: "list",
+              label_singular: " a link",
+              fields: [{ name: "link", label: "Link", widget: "link" }],
+            },
+          ],
+        },
+      ],
+    },
     {
       name: "news",
       label: "News",
@@ -385,7 +510,14 @@ const config = {
       icon: "news",
       create: true,
       fields: [
+        {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "news",
+        },
         { name: "title", label: "Title", widget: "string" },
+        { name: "test", label: "test", whidget: "markdown" },
         {
           name: "date",
           label: "Publish Date",
@@ -393,6 +525,64 @@ const config = {
         },
         { name: "thumbnail", label: "Featured Image", widget: "image" },
         { name: "body", label: "Body", widget: "markdown" },
+      ],
+    },
+    {
+      name: "categories",
+      label: "Categories",
+      folder: "/content/categories",
+      icon: "categories",
+      create: true,
+      fields: [
+        {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "categories",
+        },
+        { name: "title", label: "Name", widget: "string" },
+        { name: "description", label: "Description", widget: "text" },
+      ],
+    },
+    {
+      name: "products",
+      label: "Products",
+      folder: "/content/products",
+      icon: "products",
+      create: true,
+      fields: [
+        {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "products",
+        },
+        { name: "title", label: "Name", widget: "string" },
+        { name: "description", label: "Description", widget: "text" },
+        { name: "image", label: "Picture", widget: "image" },
+        {
+          name: "categorie",
+          label: "Categorie",
+          widget: "relation",
+          collection: "categories",
+          search_fields: ["title"],
+          value_field: "{{title}}",
+        },
+        {
+          name: "ingredients",
+          label: "Ingredients",
+          widget: "list",
+          fields: [{ name: "name", label: "name", widget: "string" }],
+        },
+        {
+          name: "price",
+          label: "Price",
+          widget: "list",
+          fields: [
+            { name: "quantity", label: "Quantity", widget: "string" },
+            { name: "price", label: "Price", widget: "number" },
+          ],
+        },
       ],
     },
   ],
