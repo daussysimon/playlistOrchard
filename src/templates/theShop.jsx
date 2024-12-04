@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { graphql } from "gatsby";
-import { Layout } from "../components";
+import { Layout, Products } from "../components";
 import "../styles/pages/theShop.scss";
 
 function TheShop({ data }) {
@@ -72,6 +72,11 @@ function TheShop({ data }) {
               </li>
             ))}
           </ul>
+        </section>
+      </div>
+      <div className="product">
+        <section className="shop-products">
+          <Products />
         </section>
       </div>
     </Layout>

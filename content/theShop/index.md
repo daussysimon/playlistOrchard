@@ -2,10 +2,10 @@
 templateKey: theShop
 header:
   title: Where to meet us
-  backgroundImage: /img/ccc-mtb-show-v-123.jpg
+  backgroundImage: /img/my21_sight_c3_29_grey_green-full.jpg
 shop:
   appointment:
-    visible: true
+    visible: false
     label: sdf
     link: df
   description: >2-

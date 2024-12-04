@@ -1,0 +1,71 @@
+@use "../../variables.css";
+
+.categories {
+  width: 400px;
+  text-align: center;
+  max-height: 40px;
+  border-bottom: 1px solid var(--main-color);
+  position: relative;
+  box-sizing: content-box;
+
+  &-title {
+    padding: 15px 30px;
+    width: 100%;
+    border: none;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    text-transform: uppercase;
+    transition: 0.5s;
+    p {
+      color: var(--main-color);
+    }
+    span {
+      position: absolute;
+      right: 20px;
+      font-weight: bold;
+    }
+  }
+
+  &-list {
+    box-sizing: content-box;
+    max-height: 0px;
+    overflow: hidden;
+    position: absolute;
+    left: -1px;
+    top: 100%;
+    transition: 0.5s;
+    width: 100%;
+    z-index: 300;
+    background: white;
+    &-item {
+      padding: 7px 30px;
+      width: 100%;
+      button {
+        width: 100%;
+      }
+      &:hover {
+        background-color: var(--main-color);
+        color: white;
+      }
+    }
+  }
+
+  &-open {
+    &-title {
+      p {
+        span {
+          transform: rotate(90deg);
+        }
+      }
+    }
+
+    &-list {
+      max-height: 600px;
+      height: auto;
+      border-top: 0;
+    }
+  }
+}

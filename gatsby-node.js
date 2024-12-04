@@ -74,6 +74,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             "products",
             "categories",
             "products",
+            "news",
           ].includes(post.node.frontmatter.templateKey)
       )
       .forEach((post, index) => {

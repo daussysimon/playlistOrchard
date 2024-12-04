@@ -428,7 +428,7 @@ const config = {
             },
 
             {
-              label: "Page Title",
+              label: "Title",
               name: "title",
               widget: "string",
             },
@@ -458,11 +458,6 @@ const config = {
                   widget: "string",
                 },
               ],
-            },
-            {
-              label: "Shop localisation",
-              name: "shopLocalisation",
-              widget: "map",
             },
           ],
         },
@@ -541,7 +536,6 @@ const config = {
           default: "categories",
         },
         { name: "title", label: "Name", widget: "string" },
-        { name: "description", label: "Description", widget: "text" },
       ],
     },
     {
@@ -567,12 +561,6 @@ const config = {
           collection: "categories",
           search_fields: ["title"],
           value_field: "{{title}}",
-        },
-        {
-          name: "ingredients",
-          label: "Ingredients",
-          widget: "list",
-          fields: [{ name: "name", label: "name", widget: "string" }],
         },
         {
           name: "price",
