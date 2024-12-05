@@ -1,5 +1,5 @@
 <p align="center">
-    <img alt="Gatsby" src="[https://playlistorchard.ca/wp-content/uploads/elementor/thumbs/PLaylist-logo-1-ph4yfo549pstu82zh1dhtf2v6l7obyjcjju8eyac5g.png])" width="60" />
+    <img alt="Gatsby" src="https://playlistorchard.ca/wp-content/uploads/elementor/thumbs/PLaylist-logo-1-ph4yfo549pstu82zh1dhtf2v6l7obyjcjju8eyac5g.png" width="60" />
 </p>
 <h1 align="center">
   Playlist Orchard
