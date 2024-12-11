@@ -8,6 +8,10 @@ const envData = {
 };
 
 export default async (req, context) => {
+  const data = await req.json();
+
+  let err = false;
+
   const mailjet = Mailjet.apiConnect(
     envData.MAILJET_API,
     envData.MAILJET_PASSWORD,
@@ -17,31 +21,42 @@ export default async (req, context) => {
     }
   );
 
-  const request = await mailjet.post("send", { version: "v3.1" }).request({
-    Messages: [
-      {
-        From: {
-          Email: "contactform@tropicwavestudio.com",
-          Name: `Contact form`,
-        },
-        To: [
-          {
-            Email: "daussy.simon@gmail.com",
-            Name: "passenger 1",
-          },
-        ],
-        Subject: "New message",
-        HTMLPart: "<div>test</div>",
-      },
-    ],
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  if (!emailRegex.test(data.email)) {
+    err = true;
+  }
+
+  Object.keys(data).forEach((it) => {
+    if (data[it]?.length <= 0 || data[it.length > 300]) {
+      err = true;
+    }
   });
 
-  request
-    .then((result) => {
-      return result;
-    })
-    .catch((err) => {
-      console.log(err.statusCode);
+  if (!err) {
+    const request = await mailjet.post("send", { version: "v3.1" }).request({
+      Messages: [
+        {
+          From: {
+            Email: "contactform@tropicwavestudio.com",
+            Name: `Contact form`,
+          },
+          To: [
+            {
+              Email: data.sentTo,
+              Name: "passenger 1",
+            },
+          ],
+          Subject: "New message from contact form",
+          HTMLPart: `<p>name: ${data.name}</p><p> email: ${data.email}</p><p> ${data.message}</p>`,
+        },
+      ],
     });
-  return new Response("all good");
+    if (request.response.status === 200) {
+      return new Response("good");
+    } else {
+      return new Response("error");
+    }
+  } else {
+    return new Response("error");
+  }
 };

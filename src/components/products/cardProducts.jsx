@@ -22,9 +22,6 @@ export function CardProducts({ data }) {
       texteCoupe = data.description.slice(0, dernierEspace);
     }
 
-    console.log(texteCoupe.length);
-
-    // Ajouter des points de suspension à la fin
     return (
       <>
         <span>{visible ? `${texteCoupe} ...` : data.description}</span>{" "}
@@ -48,8 +45,8 @@ export function CardProducts({ data }) {
       <p className="card-description">{description()}</p>
 
       <ul className="card-price">
-        {data.price.map((item) => (
-          <li>
+        {data.price.map((item, key) => (
+          <li key={key}>
             <p>
               {item.quantity} - <span>{`${item.price} CAD `}</span>
             </p>

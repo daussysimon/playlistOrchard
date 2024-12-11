@@ -78,8 +78,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           ].includes(post.node.frontmatter.templateKey)
       )
       .forEach((post, index) => {
-        console.log(post);
-
         createPage({
           path: post.node.fields.slug,
           component: path.resolve(

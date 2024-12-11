@@ -26,3 +26,28 @@
     margin: 0 auto;
   }
 }
+
+@media (max-width: 1050px) {
+  .products {
+    &-list {
+      max-width: 700px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .products {
+    &-list {
+      max-width: 350px;
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  .categoriesSelect {
+    flex-direction: column;
+    h2 {
+      margin-bottom: 25px;
+    }
+  }
+}

@@ -28,7 +28,9 @@ export function TopHeader() {
 
   return (
     <div className="topHeader">
-      <GatsbyImage className="topHeader-image" image={logo} alt="logo" />
+      <Link to="/">
+        <GatsbyImage className="topHeader-image" image={logo} alt="logo" />
+      </Link>
       <button
         type="button"
         className={

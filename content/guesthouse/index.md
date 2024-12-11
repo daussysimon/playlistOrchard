@@ -1,7 +1,7 @@
 ---
 templateKey: guestHouse
 header:
-  backgoundImage: /img/b733f5f5-b17f-4d0e-9ddb-490edf963184.jpg
+  backgoundImage: /img/my21_sight_c3_29_grey_grexxen-full.jpg
   title: The guest house
   button:
     label: Book Now
@@ -27,12 +27,15 @@ bookingPolicies:
   - the great outdoors
   - the great outdoors
 gallery:
-  - /img/my21_sight_c3_29_grecccy_grexxen-full.jpg
-  - /img/livingroom-view.jpg
-  - /img/pexels-mccccconstera-6621468-683x1024.jpg
-  - /img/livingroom-view.jpg
-  - /img/kitchen-2-100x100.jpg
-  - /img/my21_sight_c3_29_grey_grexxen-full.jpg
-  - /img/bathroom-2-100x100.jpg
-  - /img/pexels-mccccconstera-6621468-683x1024.jpg
+  - /img/sunset-2.jpg
+  - /img/entry-way.jpg
+  - /img/exterior-night-2.jpg
+  - /img/kitchen-2.jpg
+  - /img/livingroom-kitchen-600x450.jpg
+  - /img/bedroom-view.jpg
+  - /img/outside-in.jpg
+  - /img/night-looking-in.jpg
+  - /img/outdoor-shower.jpg
+  - /img/bathroom-1-600x450.jpg
+  - /img/hot-tub-2.jpg
 ---

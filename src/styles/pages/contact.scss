@@ -1,0 +1,64 @@
+.contact {
+  &-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
+  }
+  &-information {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  &-infos {
+    margin: 0 auto;
+    max-width: 500px;
+    &-title {
+      text-align: center;
+      font-size: 30px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      font-weight: 200;
+    }
+    &-description {
+      margin-bottom: 20px;
+    }
+
+    &-list {
+      margin: 0 auto;
+
+      li {
+        margin: 20px 0;
+      }
+
+      &-icon {
+        margin-right: 10px;
+        font-size: 25px;
+      }
+    }
+  }
+
+  &-form {
+    width: 50%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .contact {
+    &-container {
+      flex-direction: column;
+    }
+
+    &-information {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 30px;
+    }
+
+    &-form {
+      width: 100%;
+      margin-top: 25px;
+    }
+  }
+}

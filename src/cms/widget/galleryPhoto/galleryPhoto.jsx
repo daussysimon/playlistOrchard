@@ -13,8 +13,6 @@ export const FileControl = ({
   label,
 }) => {
   const handleChange = ({ path }) => {
-    console.log(path);
-
     onChange([...(value || []), path]);
   };
 
@@ -27,8 +25,6 @@ export const FileControl = ({
   const handleDelete = useCallback((item) => {
     onChange([...value?.filter((it) => it !== item)]);
   }, []);
-
-  console.log(value);
 
   return (
     <div className="custom">

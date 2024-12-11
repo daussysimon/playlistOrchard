@@ -57,8 +57,8 @@ function TheShop({ data }) {
           <p className="shop-description">{frontmatter.market.description}</p>
 
           <ul className="shop-theMarkets-marketsList">
-            {frontmatter.market.marketList.map((item) => (
-              <li>
+            {frontmatter.market.marketList.map((item, key) => (
+              <li key={key}>
                 <h4>{`${item.town}:`}</h4>
                 <p>
                   <span>

@@ -1,6 +1,22 @@
+@font-face {
+  font-family: "Quiksand";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/Quicksand.ttf);
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/Montserrat.ttf);
+}
+
 :root {
   --main-color: #4f3f80;
-  --main-font: "Quiksand sans", sans-serif;
+  --main-font: "Quiksand", sans-serif;
   --second-font: "Montserrat", sans-serif;
 }
 
@@ -10,7 +26,8 @@
 
 p,
 h2,
-li {
+li,
+label {
   color: #54595f;
 }
 

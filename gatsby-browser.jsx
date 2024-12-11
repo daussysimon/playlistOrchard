@@ -48,7 +48,6 @@ var errorRoute = /error=access_denied&error_description=403/;
 var accessTokenRoute = /access_token=/;
 
 exports.onInitialClientRender = function (_, _ref) {
-  console.log("test");
   var _ref$enableIdentityWi = _ref.enableIdentityWidget,
     enableIdentityWidget =
       _ref$enableIdentityWi === void 0 ? true : _ref$enableIdentityWi,

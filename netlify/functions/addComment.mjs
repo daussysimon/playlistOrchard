@@ -22,8 +22,6 @@ export default async (req, context) => {
 
   const arrayMarkdown = arrayToMarkdownTable(data);
 
-  console.log(arrayMarkdown);
-
   fs.readFile("./templates/comments.md", (err, data) => {
     const htmlTemplate = fs.readFileSync("./templates/comments.md", "utf8");
     fs.writeFileSync(

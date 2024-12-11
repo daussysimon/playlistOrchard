@@ -1,32 +1,53 @@
 import React, { useState } from "react";
-import ReCAPTCHA from "react-google-recaptcha";
+import "../styles/components/contactForm.scss";
 
-export function ContactForm() {
+export function ContactForm({ sendTo }) {
   const [value, setValue] = useState({
     name: "",
-    emai: "",
+    email: "",
     message: "",
+    sentTo: sendTo,
   });
 
-  const [error, setSerror] = useState(false);
+  const [error, setError] = useState(false);
 
-  async function handleSubmit() {
-    value.forEach((it) => {
-      if (value.length <= 0) {
-        setSerror(true);
-      }
-    });
+  async function handleSubmit(e) {
+    e.preventDefault();
+    let err = false;
+    // Object.keys(value).forEach((it) => {
+    //   if (value[it]?.length <= 0) {
+    //     err = true;
+    //     setError(true);
+    //   }
+    //   if (it === "email") {
+    //     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    //     if (!emailRegex.test(value[it])) {
+    //       err = true;
+    //       setError(true);
+    //     }
+    //   }
+    // });
 
-    if (!error) {
+    if (!err) {
       const { data } = await fetch(
         "http://localhost:8888/.netlify/functions/sendContactMessage",
         {
           method: "POST",
-          body: JSON.stringify({ ...value }),
+          body: JSON.stringify(value),
         }
       );
-
       console.log(data);
+    }
+  }
+
+  function handleChange(name, inputValue) {
+    setError(false);
+    if (name !== "message" && inputValue.length <= 70) {
+      setValue({ ...value, [name]: inputValue });
+    } else {
+      if (inputValue.length <= 300) {
+        setValue({ ...value, [name]: inputValue });
+      }
     }
   }
   return (
@@ -39,9 +60,7 @@ export function ContactForm() {
             id="name"
             className="contactForm-input"
             value={value.name}
-            onChange={(e) =>
-              setValue((prev) => ({ ...prev, name: e.target.value }))
-            }
+            onChange={(e) => handleChange("name", e.target.value)}
           />
         </label>
         <label htmlFor="email" className="contactForm-label">
@@ -51,9 +70,7 @@ export function ContactForm() {
             id="email"
             className="contactForm-input"
             value={value.email}
-            onChange={(e) =>
-              setValue((prev) => ({ ...prev, email: e.target.value }))
-            }
+            onChange={(e) => handleChange("email", e.target.value)}
           />
         </label>
         <label htmlFor="message" className="contactForm-label">
@@ -62,17 +79,12 @@ export function ContactForm() {
             id="message"
             className="contactForm-input contactForm-textArea"
             value={value.message}
-            onChange={(e) =>
-              setValue((prev) => ({ ...prev, message: e.target.value }))
-            }
+            rows={5}
+            onChange={(e) => handleChange("message", e.target.value)}
           />
         </label>
-        <ReCAPTCHA
-          sitekey="6LcugpAqAAAAAJZnxApuuMzy9EoOgsxYLrUWl6sx"
-          onChange={(val) => console.log(val)}
-        />
         <button className="contactForm-button" type="submit">
-          Submit
+          send
         </button>
         {error && <p className="contactForm-error">An error has occurred</p>}
       </form>

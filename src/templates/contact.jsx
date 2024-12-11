@@ -8,6 +8,8 @@ import {
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 
+import "../styles/pages/contact.scss";
+
 export default function Contact({ data }) {
   const { frontmatter } = data?.markdownRemark;
 
@@ -23,35 +25,61 @@ export default function Contact({ data }) {
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         />
-        <div className="contact-container"></div>
-        <div className="contact-information">
-          <div className="contact-infos">
-            <h1 className="contact-infos-title">{frontmatter.title}</h1>
-            <p className="contact-infos-description">
-              {frontmatter.description}
-            </p>
-            <ul className="contact-infos-infos-list">
-              <li>
-                <FontAwesomeIcon icon={faPhone} size="lg" />
+        <div className="contact-container">
+          <div className="contact-information">
+            <div className="contact-infos">
+              <h1 className="contact-infos-title">{frontmatter.title}</h1>
+              <p className="contact-infos-description">
+                {frontmatter.description}
+              </p>
+              <ul className="contact-infos-list">
+                <li>
+                  <FontAwesomeIcon
+                    className="contact-infos-list-icon"
+                    icon={faPhone}
+                    size="lg"
+                  />
 
-                {frontmatter.phoneNumber}
-              </li>
-              <li>
-                {" "}
-                <FontAwesomeIcon icon={faEnvelope} size="lg" />
-                {frontmatter.emailAdress}
-              </li>
-              {frontmatter.adresses.map((item, key) => (
-                <li key={key}>
-                  <FontAwesomeIcon icon={faLocationPin} size="lg" />
-                  {item}
+                  <a href={`tel:${frontmatter.phoneNumber}`}>
+                    {frontmatter.phoneNumber}
+                  </a>
                 </li>
-              ))}
-            </ul>
+                <li>
+                  {" "}
+                  <FontAwesomeIcon
+                    className="contact-infos-list-icon"
+                    icon={faEnvelope}
+                    size="lg"
+                  />
+                  <a href={`mailto:${frontmatter.emailAdress}`}>
+                    {frontmatter.emailAdress}
+                  </a>
+                </li>
+                {frontmatter.adresses.map((item, key) => (
+                  <li key={key}>
+                    <FontAwesomeIcon
+                      className="contact-infos-list-icon"
+                      icon={faLocationPin}
+                      size="lg"
+                    />
+                    <a
+                      href={`https://www.google.fr/maps/dir//${item.replace(
+                        " ",
+                        "+"
+                      )}/`}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {item}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-        </div>
-        <div className="contact-form">
-          <ContactForm />
+          <div className="contact-form">
+            <ContactForm sendTo={frontmatter.emailAdress} />
+          </div>
         </div>
       </div>
     </Layout>

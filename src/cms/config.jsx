@@ -544,6 +544,7 @@ const config = {
       folder: "/content/products",
       icon: "products",
       create: true,
+
       fields: [
         {
           label: "Template Key",
