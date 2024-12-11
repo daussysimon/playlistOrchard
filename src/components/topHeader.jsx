@@ -33,6 +33,7 @@ export function TopHeader() {
       </Link>
       <button
         type="button"
+        aria-label="burger"
         className={
           open
             ? "topHeader-burgerMenu topHeader-burgerMenu-open"

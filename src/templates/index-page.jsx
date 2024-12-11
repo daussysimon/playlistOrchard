@@ -149,6 +149,8 @@ export const query = graphql`
               gatsbyImageData(
                 webpOptions: { quality: 100 }
                 placeholder: TRACED_SVG
+                height: 800
+                width: 1090
               )
             }
           }

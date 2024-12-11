@@ -30,7 +30,7 @@ export function ContactForm({ sendTo }) {
 
     if (!err) {
       const { data } = await fetch(
-        "http://localhost:8888/.netlify/functions/sendContactMessage",
+        "https://playlistorchard.netlify.app/.netlify/functions/sendContactMessage",
         {
           method: "POST",
           body: JSON.stringify(value),
