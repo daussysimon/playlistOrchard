@@ -8,20 +8,20 @@ shop:
     visible: false
     label: sdf
     link: df
-  description: >2-
-      Our lavender orchard is so beautiful and serene, you may not want to leave –
-      and you don’t have to! We now offer a modern vacation rental complete with
-      full kitchen, outdoor cedar hot tub, and absolutely stunning views of the
-      Okanagan lake. 
+  description:
+    Our lavender orchard is so beautiful and serene, you may not want to leave –
+    and you don’t have to! We now offer a modern vacation rental complete with
+    full kitchen, outdoor cedar hot tub, and absolutely stunning views of the
+    Okanagan lake.
   title: Our Naramata shop
   phoneNumber: 456-345-3454
 market:
   title: The markets list
-  description: |-
+  description:
     Our lavender orchard is so beautiful and serene, you may not want to leave –
-      and you don’t have to! We now offer a modern vacation rental complete with
-      full kitchen, outdoor cedar hot tub, and absolutely stunning views of the
-      Okanagan lake. 
+    and you don’t have to! We now offer a modern vacation rental complete with
+    full kitchen, outdoor cedar hot tub, and absolutely stunning views of the
+    Okanagan lake.
   marketList:
     - town: Whisler
       months:

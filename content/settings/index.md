@@ -1,7 +1,6 @@
 ---
 templateKey: ui
 logo: /img/playlist-logo-1-ph4yfo549pstu82zh1dhtf2v6l7obyjcjju8eyac5g.png
-test: false
 menu:
   - url: /
     label: Home

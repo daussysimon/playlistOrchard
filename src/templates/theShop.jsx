@@ -59,7 +59,7 @@ function TheShop({ data }) {
           <ul className="shop-theMarkets-marketsList">
             {frontmatter.market.marketList.map((item, key) => (
               <li key={key}>
-                <h4>{`${item.town}:`}</h4>
+                <h3>{`${item.town}:`}</h3>
                 <p>
                   <span>
                     {item.months.start} - {item.months.end}

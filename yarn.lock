@@ -3435,10 +3435,9 @@
   resolved "https://registry.yarnpkg.com/@socket.io/component-emitter/-/component-emitter-3.1.2.tgz#821f8442f4175d8f0467b9daf26e3a18e2d02af2"
   integrity sha512-9BCxFwvbGg/RsZK9tjXd8s4UcwR0MWeFQ1XEKIQVVvAGJyINdrqKMcTRyLoK8Rse1GjzLV9cwjWV1olXRWEXVA==
 
-"@staticcms/core@^4.3.0":
+"@staticcms/core@https://github.com/daussysimon/cmsUpdate":
   version "4.3.0"
-  resolved "https://registry.yarnpkg.com/@staticcms/core/-/core-4.3.0.tgz#442d2ca544e2d959a00250066de10fe8d982a828"
-  integrity sha512-SwnzVqG5mJ7r60DMh3MD3yuZSo9A7H8924TXunVHMBdbGzJzHCu+RUPNzY4OKRZmvqqnrglW9ObFWlv6IJ7Mvg==
+  resolved "https://github.com/daussysimon/cmsUpdate#02ded43198b6c554692ff264b13e3466a787a90f"
   dependencies:
     "@babel/eslint-parser" "7.23.3"
     "@babel/runtime" "7.23.7"

@@ -25,7 +25,7 @@ export default function HTML(props) {
         <meta charSet="utf-8" />
 
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-        <link rel="icon" type="image/x-icon" href="favicon.ico"></link>
+        <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
         <title>Playlist Orchard</title>
         <meta name="description" content="Voici un exemple de description" />
 

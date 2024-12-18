@@ -24,14 +24,12 @@ module.exports = {
         name: "images",
         path: `${__dirname}/static/img`,
       },
-      __key: "images",
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `pages`,
         path: `${__dirname}/content`,
-        __key: "pages",
       },
     },
     {
