@@ -36,7 +36,7 @@ function TheShop({ data }) {
             ) : (
               <a
                 className="shop-theShop-button"
-                href={`http://phone${frontmatter.shop.phoneNumber}`}
+                href={`tel:${frontmatter.shop.phoneNumber}`}
               >
                 {`Phone: ${frontmatter.shop.phoneNumber}`}
               </a>
