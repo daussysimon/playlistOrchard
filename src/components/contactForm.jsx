@@ -36,7 +36,6 @@ export function ContactForm({ sendTo }) {
           body: JSON.stringify(value),
         }
       );
-      console.log(data);
     }
   }
 

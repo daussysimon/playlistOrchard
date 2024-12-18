@@ -62,8 +62,6 @@ export function LinkControl({ onChange, value }) {
               id="radio"
               checked={customValue.link}
               onChange={(e) => {
-                console.log(e.target.checked);
-
                 handleChange("link", e.target.checked);
               }}
             />

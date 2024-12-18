@@ -3,9 +3,6 @@ import { Link } from "gatsby";
 import "../styles/components/button.scss";
 
 export function Button({ type, url, label, extraClass = "", to }) {
-  console.log(label);
-  console.log(url);
-
   return (
     <div
       className={

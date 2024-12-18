@@ -44,7 +44,7 @@ function IndexPage({ data }) {
           type="header"
         />
         <Button
-          url={`/${frontmatter.header.button_2.link}`}
+          url={frontmatter.header.button_2.link}
           label={frontmatter.header.button_2.label}
           type="header"
         />
