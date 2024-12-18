@@ -6,10 +6,10 @@ header:
     both a lavender farm and an active orchard. We grow a variety of fruit and
     hand harvest our 700 plus lavender plants.
   backgoundImage: /img/my21_sight_c3_29_grey_green-full.jpg
-  button 1:
+  button_1:
     label: OUR SHOP
-    link: /shop
-  button 2:
+    link: /theShop
+  button_2:
     label: BOOK A STAY WITH US
     link: /guesthouse
   backgroundImage: /img/my21_sight_c3_29_grey_green-full.jpg
@@ -25,7 +25,7 @@ section2:
       If you love lavender, the great outdoors, and BC wine, a stay with us should be on your list of must-dos.
     image: /img/my21_sight_c3_29_grey_grexxen-full.jpg
     button:
-      label: DISCOVERx
+      label: DISCOVER
       link: /guesthouse
   part2:
     title: OUR MISSION
@@ -35,7 +35,7 @@ section2:
     image: /img/pexels-mccccconstera-6621468-683x1024.jpg
     button:
       label: DISCOVER OUR PRODUCTS
-      link: /theshop
+      link: /theShop
 aboutUs:
   text:
     Five years ago we had a dream; today, this dream is a reality.  We came to

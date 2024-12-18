@@ -10,9 +10,10 @@ export default function Guesthouse({ data }) {
     <>
       <h1>{frontmatter.header.title}</h1>
       <Button
-        url={`/${frontmatter.header.button.link}`}
+        url={frontmatter.header.button.link}
         label={frontmatter.header.button.label}
         type="header"
+        to="external"
       />
     </>
   );
@@ -32,8 +33,9 @@ export default function Guesthouse({ data }) {
           <p>{frontmatter?.description}</p>
           <Button
             extraClass="center"
-            url={`/${frontmatter.bookingButton.link}`}
+            url={`${frontmatter.bookingButton.link}`}
             label={frontmatter.bookingButton.label}
+            to="external"
           />
           <div className="guesthouse-presentation">
             <div className="guesthouse-details-amenities">

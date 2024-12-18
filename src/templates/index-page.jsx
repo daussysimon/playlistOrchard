@@ -39,12 +39,12 @@ function IndexPage({ data }) {
       <p>{frontmatter.header.description}</p>
       <nav>
         <Button
-          url={`/${frontmatter.header.button_1.link}`}
+          url={frontmatter.header.button_1.link}
           label={frontmatter.header.button_1.label}
           type="header"
         />
         <Button
-          url={`/${frontmatter.header.button_2.Button}`}
+          url={`/${frontmatter.header.button_2.link}`}
           label={frontmatter.header.button_2.label}
           type="header"
         />

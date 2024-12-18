@@ -5,7 +5,7 @@ header:
   title: The guest house
   button:
     label: Book Now
-    link: sdfsdf
+    link: https://fr.airbnb.ca/rooms/538398113160483759?_set_bev_on_new_domain=1734528463_EAY2ExNDM5YTQyYW&source_impression_id=p3_1734528465_P33BQkipgwP_oa9A
 description: >-
   Our lavender orchard is so beautiful and serene, you may not want to leave –
   and you don’t have to! We now offer a modern vacation rental complete with
@@ -15,7 +15,7 @@ description: >-
   If you love lavender, the great outdoors, and BC wine, a stay with us should be on your list of must-dos.
 bookingButton:
   label: Book a stay with us
-  link: sdfsfsdf
+  link: https://fr.airbnb.ca/rooms/538398113160483759?_set_bev_on_new_domain=1734528463_EAY2ExNDM5YTQyYW&source_impression_id=p3_1734528465_P33BQkipgwP_oa9A
 amenties:
   - the great outdoors
   - the great outdoors
